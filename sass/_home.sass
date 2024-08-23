@@ -1,0 +1,222 @@
+.main
+    padding-top: 28px
+    &__top
+        display: flex
+        align-items: flex-end
+        justify-content: space-between
+        margin-bottom: 10px
+    &__title
+        margin: 0
+        font-weight: 500
+        font-size: 30px
+        line-height: 117%
+        color: #000
+    &__all
+        padding: 4px
+        font-weight: 400
+        font-size: 15px
+        color: #000
+        opacity: 0.6
+        text-decoration: none
+        &:hover
+            opacity: 1
+    &__wrap
+        position: relative
+    &__prev, &__next
+        background: #f6f6f6
+        border-radius: 50%
+        width: 45px
+        height: 45px
+        display: flex
+        align-items: center
+        justify-content: center
+        cursor: pointer
+        position: absolute
+        top: 50%
+        margin-top: -23px
+        z-index: 3
+        transition: all 0.3s
+        user-select: none
+        &.swiper-button-disabled
+            opacity: 0
+            pointer-events: none
+        path
+            transition: all 0.3s
+        &:hover
+            path
+                fill: #A72536
+    &__prev
+        left: -26px
+        padding-right: 1px
+    &__next
+        right: -26px
+        padding-left: 1px
+    &__block
+        display: flex
+        flex-direction: column
+        position: relative
+        text-decoration: none
+    &__img
+        width: 100%
+        margin-bottom: 8px
+        height: 192px
+        border-radius: 20px
+        overflow: hidden
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            transition: all 1s
+    &__time
+        backdrop-filter: blur(24px)
+        background: rgba(47, 34, 36, 0.16)
+        position: absolute
+        top: 8px
+        left: 8px
+        padding: 8px 12px
+        border-radius: 16px
+        font-weight: 700
+        font-size: 13px
+        line-height: 125%
+        color: #d0c8c9
+        b
+            color: #f6f4f4
+    &__cont
+        padding: 0 4px
+    &__main
+        display: flex
+        align-items: center
+        justify-content: space-between
+    &__name
+        font-weight: 700
+        font-size: 16px
+        line-height: 120%
+        color: #5b484a
+        width: calc(100% - 85px)
+    &__raiting
+        display: flex
+        align-items: center
+        gap: 4px
+        font-weight: 700
+        font-size: 14px
+        line-height: 100%
+        color: #a72536
+        span
+            color: #ab9c9e
+    &__info
+        display: flex
+        justify-content: space-between
+    &__stat
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+        width: 62px
+    &__about
+        width: calc(100% - 80px)
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        font-weight: 500
+        font-size: 11px
+        line-height: 125%
+        color: #584b4d
+    &__city
+        padding-top: 1px
+        margin-bottom: 3px
+        color: #847173
+    &__kitchen
+        padding: 2.5px 0
+        display: flex
+        align-items: center
+        gap: 10px
+        span
+            max-width: calc(100% - 25px)
+    &__last
+        padding: 2px 0
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+    &__pricestat
+        display: flex
+        align-items: center
+        gap: 2px
+        padding-right: 11px
+        position: relative
+        &::after
+            content: ""
+            background: #ab9c9e
+            width: 1px
+            height: 100%
+            border-radius: 2px
+            position: absolute
+            top: 0
+            right: -1px
+    &__price
+        padding-left: 11px
+        display: flex
+        align-items: center
+        gap: 7px
+        span
+            padding-top: 2px
+    &__bycar
+        font-weight: 700
+        font-size: 11px
+        line-height: 100%
+        color: #584b4d
+        display: flex
+        align-items: center
+        gap: 6px
+        padding-top: 4px
+        margin-bottom: 6px
+    &__dist
+        font-weight: 700
+        font-size: 11px
+        line-height: 125%
+        color: #847173
+@media(min-width: 768px)
+    .main__block:hover
+        .main__img
+            img
+                transform: scale(1.1)
+@media(max-width: 575px)
+    .main
+        padding-top: 24px
+        &__all
+            display: none
+        &__top
+            margin-bottom: 10px
+        &__title
+            font-size: 24px
+        &__prev, &__next
+            display: none
+        &__wrap
+            padding-right: 6px
+        &__slider
+            overflow: visible
+        &__img
+            margin-bottom: 12px
+        &__raiting
+            font-size: 16px
+            line-height: 100%
+            span
+                display: none
+        &__stat
+            display: none
+        &__about
+            width: 100%
+            flex-direction: row
+            flex-wrap: wrap
+            justify-content: space-between
+            font-size: 13px
+        &__price
+            display: none
+        &__pricestat
+            padding-right: 0
+            &::after
+                display: none
+        &__city
+            order: 5
+            width: 100%
+        &__name
+            font-size: 20px
+            line-height: 120%
